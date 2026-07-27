@@ -7,12 +7,10 @@ ROOT_UID=0
 if [ "$UID" -eq "$ROOT_UID" ]; then
     SCHEMES_DIR="/usr/share/color-schemes"
     PLASMA_DIR="/usr/share/plasma/desktoptheme"
-    LOOKFEEL_DIR="/usr/share/plasma/look-and-feel"
     KVANTUM_DIR="/usr/share/Kvantum"
 else
     SCHEMES_DIR="$HOME/.local/share/color-schemes"
     PLASMA_DIR="$HOME/.local/share/plasma/desktoptheme"
-    LOOKFEEL_DIR="$HOME/.local/share/plasma/look-and-feel"
     KVANTUM_DIR="$HOME/.config/Kvantum"
 fi
 
@@ -20,7 +18,6 @@ THEME_NAME=Onyx
 
 [[ ! -d ${SCHEMES_DIR} ]] && mkdir -p ${SCHEMES_DIR}
 [[ ! -d ${PLASMA_DIR} ]] && mkdir -p ${PLASMA_DIR}
-[[ ! -d ${LOOKFEEL_DIR} ]] && mkdir -p ${LOOKFEEL_DIR}
 [[ ! -d ${KVANTUM_DIR} ]] && mkdir -p ${KVANTUM_DIR}
 
 install() {
@@ -28,7 +25,6 @@ install() {
 
     [[ -d ${PLASMA_DIR}/${name} ]] && rm -rf ${PLASMA_DIR}/${name}*
     [[ -f ${SCHEMES_DIR}/${name}.colors ]] && rm -rf ${SCHEMES_DIR}/${name}*.colors
-    [[ -d ${LOOKFEEL_DIR}/com.github.vinceliuice.${name} ]] && rm -rf ${LOOKFEEL_DIR}/com.github.vinceliuice.${name}*
     [[ -d ${KVANTUM_DIR}/${name} ]] && rm -rf ${KVANTUM_DIR}/${name}*
 
     cp -r ${SRC_DIR}/color-schemes/*.colors                                            ${SCHEMES_DIR}
@@ -39,7 +35,6 @@ install() {
     cp -r ${SRC_DIR}/plasma/desktoptheme/icons                                         ${PLASMA_DIR}/${name}-dark
     cp -r ${SRC_DIR}/color-schemes/${name}.colors                                      ${PLASMA_DIR}/${name}/colors
     cp -r ${SRC_DIR}/color-schemes/${name}Dark.colors                                  ${PLASMA_DIR}/${name}-dark/colors
-    cp -r ${SRC_DIR}/plasma/look-and-feel/*                                            ${LOOKFEEL_DIR}
 }
 
 echo "Installing '${THEME_NAME}' Plasma and Kvantum themes..."
