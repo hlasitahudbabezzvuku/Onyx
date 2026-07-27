@@ -1,4 +1,8 @@
-Onyx is a materia design theme for KDE Plasma desktop forked from Orchis theme.
+Onyx is a materia design theme for Kvantum engine forked from Orchis theme.
+
+## Motivation
+
+I'm using Niri as my window manager with Orchis (black variant) as my GTK and Libadwaita theme. This allows me to theme all the QT apps to match my GTK apps.
 
 ## Installation
 
