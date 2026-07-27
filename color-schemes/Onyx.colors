@@ -131,8 +131,8 @@ ForegroundPositive=0,110,40
 ForegroundVisited=224,64,251
 
 [General]
-ColorScheme=Orchis
-Name=Orchis
+ColorScheme=Onyx
+Name=Onyx
 shadeSortColumn=true
 
 [KDE]
